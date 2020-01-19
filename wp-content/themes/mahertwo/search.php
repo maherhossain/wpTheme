@@ -12,10 +12,9 @@
 
 			<?php if(have_posts()) : ?>
 				<?php while(have_posts()) : the_post(); ?>
-					<article class="single-post">
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<div class="post-content"><?php the_excerpt(); ?></div>
-					</article>
+
+					<?php get_template_part("templates/content", get_post_format()); ?>
+					
 				<?php endwhile; ?>
 			<?php else : ?>
 				<?php echo wpautop("No posts Found"); ?>

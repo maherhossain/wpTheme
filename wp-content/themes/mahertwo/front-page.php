@@ -2,8 +2,18 @@
 
 	<section>
 		<div class="container">
+			<div class="showcase-container">
+				<div class="showcase">
+					<?php 
+						if(is_active_sidebar("showcase")){
+							dynamic_sidebar("showcase");
+						}
+					 ?>
+				</div>
+			</div>
 			
-			<div class="main-content">
+
+			<div class="full-width-content">
 			<?php if(have_posts()) : ?>
 				<?php while(have_posts()) : the_post(); ?>
 					<article class="single-post">
@@ -35,12 +45,32 @@
 				<?php echo wpautop("No posts Found"); ?>
 			<?php endif; ?>
 			</div>
-			
-			<!-- Sidebar area -->
-			<?php get_sidebar(); ?>
 
 
-			<div class="clr"></div>
+			<div class="box-container">
+				<div class="box1">
+					<?php 
+						if(is_active_sidebar("box-1")){
+							dynamic_sidebar("box-1");
+						}
+					 ?>
+				</div>
+				<div class="box2">
+					<?php 
+						if(is_active_sidebar("box-2")){
+							dynamic_sidebar("box-2");
+						}
+					 ?>
+				</div>
+				<div class="box3">
+					<?php 
+						if(is_active_sidebar("box-3")){
+							dynamic_sidebar("box-3");
+						}
+					 ?>
+				</div>
+				<div class="clr"></div>
+			</div>
 
 		</div>
 	</section>
